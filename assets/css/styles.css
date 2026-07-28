@@ -262,13 +262,14 @@ a { color: inherit; text-decoration: none; }
 
 .partners {
   margin-top: clamp(80px, 11vw, 132px);
-  padding-block: clamp(34px, 5vw, 48px);
+  padding-block: clamp(40px, 5.6vw, 60px);
   border-top: 1px solid var(--rule);
   border-bottom: 1px solid var(--rule);
   background: var(--paper-alt);
 }
 
 .marquee {
+  --logo-scale: 1;
   margin-top: clamp(26px, 3.4vw, 36px);
   overflow: hidden;
   -webkit-mask-image: linear-gradient(90deg, transparent, #000 9%, #000 91%, transparent);
@@ -290,8 +291,8 @@ a { color: inherit; text-decoration: none; }
 .marquee__group {
   display: flex;
   align-items: center;
-  gap: clamp(52px, 7vw, 96px);
-  padding-right: clamp(52px, 7vw, 96px);
+  gap: clamp(56px, 7.5vw, 108px);
+  padding-right: clamp(56px, 7.5vw, 108px);
 }
 
 .logo {
@@ -308,12 +309,12 @@ a { color: inherit; text-decoration: none; }
 .logo:hover img { opacity: 1; }
 
 /* optically balanced heights */
-.logo--stanford img { height: 36px; }
-.logo--del img      { height: 54px; }
-.logo--ut img       { height: 52px; }
-.logo--gates img    { height: 30px; }
-.logo--turn img     { height: 31px; }
-.logo--lef img      { height: 38px; }
+.logo--stanford img { height: calc(52px * var(--logo-scale)); }
+.logo--del img      { height: calc(76px * var(--logo-scale)); }
+.logo--ut img       { height: calc(74px * var(--logo-scale)); }
+.logo--gates img    { height: calc(43px * var(--logo-scale)); }
+.logo--turn img     { height: calc(44px * var(--logo-scale)); }
+.logo--lef img      { height: calc(54px * var(--logo-scale)); }
 
 /* ── Principles ──────────────────────────────────────────── */
 
@@ -565,6 +566,7 @@ a { color: inherit; text-decoration: none; }
 
 @media (max-width: 720px) {
   body { font-size: 16px; }
+  .marquee { --logo-scale: .78; }
   .diagram__svg--wide { display: none; }
   .diagram__svg--narrow { display: block; }
   .hero__title { max-width: 20ch; }
