@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Portable Memory — A user-governed memory layer for personal AI</title>
+<meta name="description" content="Portable Memory is an initiative for portable, persistent, user-governed personal context: a memory layer that moves with the person across tools, models, and institutions." />
+<meta name="theme-color" content="#FCFBF9" />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Portable Memory" />
+<meta property="og:description" content="A user-governed memory layer that persists across interactions, moves across tools, and is shared only by role, consent, and purpose." />
+
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Source+Serif+4:opsz,wght@8..60,300;8..60,400&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap site-header__inner">
+    <a class="wordmark" href="#top" aria-label="Portable Memory — home">
+      <span class="wordmark__mark" aria-hidden="true"></span>
+      <span class="wordmark__text">Portable Memory</span>
+    </a>
+
+    <nav class="tabs" aria-label="Primary">
+      <a class="tab" href="https://hcp.me/" target="_blank" rel="noopener noreferrer">
+        HCP<span class="tab__arrow" aria-hidden="true">↗</span>
+      </a>
+      <a class="tab" href="https://ai-in-education-research-agent.vercel.app/agent" target="_blank" rel="noopener noreferrer">
+        EduAgent<span class="tab__arrow" aria-hidden="true">↗</span>
+      </a>
+      <a class="tab tab--anchor" href="#subscribe">Subscribe</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ── Hero ───────────────────────────────────────────── -->
+  <section class="hero" id="top">
+    <div class="wrap">
+      <h1 class="hero__title">
+        Memory that belongs to<br class="br-lg" />
+        the person, not the platform.
+      </h1>
+
+      <p class="hero__lede">
+        A user-governed layer of personal context that persists across interactions,
+        moves across tools, and is shared only by role, consent, and purpose.
+      </p>
+
+      <p class="hero__links">
+        <a class="link-arrow" href="https://digitaleconomy.stanford.edu/publication/the-future-of-personal-ai-portable-and-persistent-personal-memory-through-a-unified-human-context-protocol/" target="_blank" rel="noopener noreferrer">Read the report<span aria-hidden="true">↗</span></a>
+      </p>
+    </div>
+
+    <figure class="diagram" role="img" aria-label="Diagram: a single continuous line of personal context passes through four separate systems — education, health, work and everyday tools — without being held by any of them.">
+      <div class="wrap">
+
+        <!-- wide -->
+        <svg class="diagram__svg diagram__svg--wide" viewBox="0 0 1200 200" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+          <g class="dg">
+            <!-- rail -->
+            <line class="dg-rail" x1="60" y1="100" x2="1168" y2="100" />
+            <!-- moving pulse -->
+            <line class="dg-pulse" x1="60" y1="100" x2="1168" y2="100" />
+
+            <!-- source -->
+            <circle class="dg-source-halo" cx="44" cy="100" r="13" />
+            <circle class="dg-source" cx="44" cy="100" r="4.5" />
+            <text class="dg-label dg-label--source" x="44" y="132">the person</text>
+
+            <!-- systems -->
+            <g>
+              <rect class="dg-box" x="240" y="72" width="126" height="56" rx="2" />
+              <text class="dg-label" x="303" y="152">education</text>
+            </g>
+            <g>
+              <rect class="dg-box" x="464" y="72" width="126" height="56" rx="2" />
+              <text class="dg-label" x="527" y="152">health</text>
+            </g>
+            <g>
+              <rect class="dg-box" x="688" y="72" width="126" height="56" rx="2" />
+              <text class="dg-label" x="751" y="152">work</text>
+            </g>
+            <g>
+              <rect class="dg-box" x="912" y="72" width="126" height="56" rx="2" />
+              <text class="dg-label" x="975" y="152">everyday</text>
+            </g>
+
+            <!-- terminus -->
+            <path class="dg-tip" d="M1160 94 L1172 100 L1160 106" />
+          </g>
+        </svg>
+
+        <!-- narrow -->
+        <svg class="diagram__svg diagram__svg--narrow" viewBox="0 0 320 330" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+          <g class="dg">
+            <line class="dg-rail" x1="60" y1="26" x2="60" y2="312" />
+            <line class="dg-pulse dg-pulse--v" x1="60" y1="26" x2="60" y2="312" />
+
+            <circle class="dg-source-halo" cx="60" cy="14" r="12" />
+            <circle class="dg-source" cx="60" cy="14" r="4.5" />
+
+            <g>
+              <rect class="dg-box" x="26" y="62" width="68" height="46" rx="2" />
+              <text class="dg-label dg-label--left" x="110" y="90">education</text>
+            </g>
+            <g>
+              <rect class="dg-box" x="26" y="152" width="68" height="46" rx="2" />
+              <text class="dg-label dg-label--left" x="110" y="180">health</text>
+            </g>
+            <g>
+              <rect class="dg-box" x="26" y="242" width="68" height="46" rx="2" />
+              <text class="dg-label dg-label--left" x="110" y="270">work</text>
+            </g>
+
+            <path class="dg-tip" d="M54 304 L60 316 L66 304" />
+          </g>
+        </svg>
+
+        <figcaption class="diagram__caption">One layer of context, carried across every system.</figcaption>
+      </div>
+    </figure>
+  </section>
+
+  <!-- ── Convened by ────────────────────────────────────── -->
+  <section class="partners" aria-label="Convening organizations">
+    <div class="wrap">
+      <p class="eyebrow eyebrow--center">Convened by</p>
+    </div>
+
+    <div class="marquee" data-marquee>
+      <div class="marquee__track">
+        <div class="marquee__group">
+          <span class="logo logo--stanford"><img src="assets/logos/stanford.webp" alt="Stanford University" loading="lazy" /></span>
+          <span class="logo logo--del"><img src="assets/logos/stanford-digital-economy-lab.webp" alt="Stanford Digital Economy Lab" loading="lazy" /></span>
+          <span class="logo logo--ut"><img src="assets/logos/ut-austin.png" alt="The University of Texas at Austin" loading="lazy" /></span>
+          <span class="logo logo--gates"><img src="assets/logos/gates-foundation.png" alt="Gates Foundation" loading="lazy" /></span>
+          <span class="logo logo--turn"><img src="assets/logos/turn-io.png" alt="Turn.io" loading="lazy" /></span>
+          <span class="logo logo--lef"><img src="assets/logos/learning-economy.png" alt="Learning Economy Foundation" loading="lazy" /></span>
+        </div>
+        <div class="marquee__group" aria-hidden="true">
+          <span class="logo logo--stanford"><img src="assets/logos/stanford.webp" alt="" loading="lazy" /></span>
+          <span class="logo logo--del"><img src="assets/logos/stanford-digital-economy-lab.webp" alt="" loading="lazy" /></span>
+          <span class="logo logo--ut"><img src="assets/logos/ut-austin.png" alt="" loading="lazy" /></span>
+          <span class="logo logo--gates"><img src="assets/logos/gates-foundation.png" alt="" loading="lazy" /></span>
+          <span class="logo logo--turn"><img src="assets/logos/turn-io.png" alt="" loading="lazy" /></span>
+          <span class="logo logo--lef"><img src="assets/logos/learning-economy.png" alt="" loading="lazy" /></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Principles ─────────────────────────────────────── -->
+  <section class="principles" aria-label="Principles">
+    <div class="wrap">
+      <ol class="grid-3">
+        <li class="principle">
+          <span class="principle__no">01</span>
+          <h2 class="principle__name">Portable</h2>
+          <p class="principle__body">Moves with the person across tools, models, and institutions.</p>
+        </li>
+        <li class="principle">
+          <span class="principle__no">02</span>
+          <h2 class="principle__name">Persistent</h2>
+          <p class="principle__body">Accumulates over a lifetime rather than resetting each session.</p>
+        </li>
+        <li class="principle">
+          <span class="principle__no">03</span>
+          <h2 class="principle__name">Governed</h2>
+          <p class="principle__body">Shared selectively by role, consent, and purpose. Always revocable.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ── Origin ─────────────────────────────────────────── -->
+  <section class="origin" aria-label="Founding report">
+    <div class="wrap origin__inner">
+      <p class="eyebrow">Founding report</p>
+      <h2 class="origin__title">
+        The Future of Personal AI: Portable and Persistent Personal Memory
+        through a Unified Human Context Protocol
+      </h2>
+      <p class="origin__meta">Stanford Digital Economy Lab · March 2026</p>
+      <p>
+        <a class="link-arrow" href="https://digitaleconomy.stanford.edu/publication/the-future-of-personal-ai-portable-and-persistent-personal-memory-through-a-unified-human-context-protocol/" target="_blank" rel="noopener noreferrer">Read the report<span aria-hidden="true">↗</span></a>
+      </p>
+    </div>
+  </section>
+
+  <!-- ── Projects ───────────────────────────────────────── -->
+  <section class="projects" aria-label="Projects">
+    <div class="wrap">
+      <p class="eyebrow">Projects</p>
+
+      <div class="cards">
+        <a class="card" href="https://hcp.me/" target="_blank" rel="noopener noreferrer">
+          <span class="card__kicker">Protocol</span>
+          <h2 class="card__title">Human Context Protocol</h2>
+          <p class="card__body">
+            The open architecture for encapsulating personal context and granting
+            fine-grained, revocable access to it.
+          </p>
+          <span class="card__cta">hcp.me<span class="card__arrow" aria-hidden="true">↗</span></span>
+        </a>
+
+        <a class="card" href="https://ai-in-education-research-agent.vercel.app/agent" target="_blank" rel="noopener noreferrer">
+          <span class="card__kicker">Application</span>
+          <h2 class="card__title">EduAgent</h2>
+          <p class="card__body">
+            A deep-research agent for education, grounded in a learner's own
+            persistent context rather than a cold start.
+          </p>
+          <span class="card__cta">Open EduAgent<span class="card__arrow" aria-hidden="true">↗</span></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Subscribe ──────────────────────────────────────── -->
+  <section class="subscribe" id="subscribe" aria-label="Subscribe">
+    <div class="wrap subscribe__inner">
+      <p class="eyebrow">Subscribe</p>
+      <h2 class="subscribe__title">Follow the work.</h2>
+      <p class="subscribe__lede">Occasional updates on the protocol, pilots, and publications.</p>
+
+      <form class="sub-form" id="sub-form" method="POST" target="sub-sink" novalidate>
+        <label class="sr-only" for="sub-email">Email address</label>
+        <input
+          class="sub-form__input"
+          id="sub-email"
+          type="email"
+          name="email"
+          inputmode="email"
+          autocomplete="email"
+          placeholder="you@institution.edu"
+          required />
+        <button class="sub-form__button" type="submit">
+          Subscribe<span class="sub-form__arrow" aria-hidden="true">→</span>
+        </button>
+      </form>
+
+      <p class="sub-form__status" id="sub-status" role="status" aria-live="polite"></p>
+      <iframe name="sub-sink" id="sub-sink" title="Form target" tabindex="-1"></iframe>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap site-footer__inner">
+    <p class="site-footer__brand">Portable Memory</p>
+    <nav class="site-footer__nav" aria-label="Footer">
+      <a href="https://hcp.me/" target="_blank" rel="noopener noreferrer">HCP</a>
+      <a href="https://ai-in-education-research-agent.vercel.app/agent" target="_blank" rel="noopener noreferrer">EduAgent</a>
+      <a href="https://digitaleconomy.stanford.edu/publication/the-future-of-personal-ai-portable-and-persistent-personal-memory-through-a-unified-human-context-protocol/" target="_blank" rel="noopener noreferrer">Report</a>
+      <a href="#subscribe">Subscribe</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>
