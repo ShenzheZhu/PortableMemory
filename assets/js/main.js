@@ -126,6 +126,11 @@ const SUBSCRIBE_CONFIG = {
           clone.querySelectorAll('img'),
           (img) => img.setAttribute('alt', '')
         );
+        /* duplicates stay clickable but out of the tab order */
+        Array.prototype.forEach.call(
+          clone.querySelectorAll('a'),
+          (link) => link.setAttribute('tabindex', '-1')
+        );
         fragment.appendChild(clone);
       }
       track.appendChild(fragment);

@@ -287,7 +287,9 @@ a { color: inherit; text-decoration: none; }
   width: max-content;
   animation: marquee var(--marquee-duration, 46s) linear infinite;
 }
-.marquee:hover .marquee__track { animation-play-state: paused; }
+/* pause so a moving logo can actually be clicked, or tabbed to */
+.marquee:hover .marquee__track,
+.marquee:focus-within .marquee__track { animation-play-state: paused; }
 
 @keyframes marquee {
   from { transform: translate3d(0, 0, 0); }
@@ -305,6 +307,8 @@ a { color: inherit; text-decoration: none; }
   display: grid;
   place-items: center;
   flex: none;
+  padding: 10px;
+  border-radius: 2px;
 }
 .logo img {
   width: auto;
@@ -312,7 +316,8 @@ a { color: inherit; text-decoration: none; }
   filter: grayscale(1);
   transition: opacity .3s var(--ease);
 }
-.logo:hover img { opacity: 1; }
+.logo:hover img,
+.logo:focus-visible img { opacity: 1; }
 
 /* optically balanced ratios against --u */
 .logo--del img      { height: var(--u); }
