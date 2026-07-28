@@ -20,8 +20,8 @@
    connected yet instead of silently dropping addresses.
    ------------------------------------------------------------ */
 const SUBSCRIBE_CONFIG = {
-  formAction: '',
-  emailEntryId: ''
+  formAction: 'https://docs.google.com/forms/d/e/1FAIpQLSc86HnS20fqfteOI_mKdVztr7mg7niPPCMpzz9NByyM9cjXyg/formResponse',
+  emailEntryId: 'entry.138413439'
 };
 
 (function () {
