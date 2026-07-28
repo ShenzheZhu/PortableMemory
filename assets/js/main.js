@@ -87,6 +87,75 @@ const SUBSCRIBE_CONFIG = {
     window.setTimeout(revealAll, 4000);
   }
 
+  /* ── Marquee: clone enough groups to cover the viewport ───
+     One group is narrower than a wide screen, so shifting by a single
+     group width would leave the right-hand side empty until the loop
+     restarted. Clone until the track still covers the viewport after
+     the shift, then drive the shift and duration from the measured
+     width so the speed is the same at every size.
+     ------------------------------------------------------- */
+  const marquee = document.querySelector('[data-marquee]');
+  const track = marquee && marquee.querySelector('.marquee__track');
+
+  if (track && !reduceMotion) {
+    const PIXELS_PER_SECOND = 34;
+
+    const imagesReady = () =>
+      Array.prototype.every.call(
+        track.querySelectorAll('img'),
+        (img) => img.complete && img.naturalWidth > 0
+      );
+
+    const fitMarquee = () => {
+      const first = track.firstElementChild;
+      if (!first) return;
+
+      while (track.children.length > 1) track.lastElementChild.remove();
+
+      const groupWidth = first.getBoundingClientRect().width;
+      if (groupWidth < 1) return;
+
+      /* after shifting one group, the remainder must still fill the screen */
+      const needed = Math.max(2, Math.ceil(window.innerWidth / groupWidth) + 1);
+
+      const fragment = document.createDocumentFragment();
+      for (let i = 1; i < needed; i++) {
+        const clone = first.cloneNode(true);
+        clone.setAttribute('aria-hidden', 'true');
+        Array.prototype.forEach.call(
+          clone.querySelectorAll('img'),
+          (img) => img.setAttribute('alt', '')
+        );
+        fragment.appendChild(clone);
+      }
+      track.appendChild(fragment);
+
+      track.style.setProperty('--marquee-shift', groupWidth + 'px');
+      track.style.setProperty(
+        '--marquee-duration',
+        (groupWidth / PIXELS_PER_SECOND).toFixed(2) + 's'
+      );
+    };
+
+    let attempts = 0;
+    const runWhenReady = () => {
+      if (imagesReady() || attempts++ > 60) fitMarquee();
+      else window.setTimeout(runWhenReady, 120);
+    };
+
+    runWhenReady();
+    window.addEventListener('load', fitMarquee);
+
+    let resizeTimer;
+    let lastWidth = window.innerWidth;
+    window.addEventListener('resize', () => {
+      if (window.innerWidth === lastWidth) return; /* ignore mobile URL-bar resizes */
+      lastWidth = window.innerWidth;
+      window.clearTimeout(resizeTimer);
+      resizeTimer = window.setTimeout(fitMarquee, 180);
+    });
+  }
+
   /* ── Subscribe form ──────────────────────────────────────── */
   const form   = document.getElementById('sub-form');
   const input  = document.getElementById('sub-email');

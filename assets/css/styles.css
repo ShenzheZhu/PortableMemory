@@ -279,16 +279,19 @@ a { color: inherit; text-decoration: none; }
           mask-image: linear-gradient(90deg, transparent, #000 9%, #000 91%, transparent);
 }
 
+/* --marquee-shift is one group's width and --marquee-duration its travel
+   time; main.js sets both after cloning enough groups to cover the
+   viewport. The 50% / 46s defaults keep the loop running without JS. */
 .marquee__track {
   display: flex;
   width: max-content;
-  animation: marquee 46s linear infinite;
+  animation: marquee var(--marquee-duration, 46s) linear infinite;
 }
 .marquee:hover .marquee__track { animation-play-state: paused; }
 
 @keyframes marquee {
   from { transform: translate3d(0, 0, 0); }
-  to   { transform: translate3d(-50%, 0, 0); }
+  to   { transform: translate3d(calc(-1 * var(--marquee-shift, 50%)), 0, 0); }
 }
 
 .marquee__group {
